@@ -4,6 +4,7 @@
     "nodemon": "^1.18.10"
   },
   "scripts": {
+    "dev": "npm run server & npm run client",
     "server": "nodemon app",
     "client": "http-server -p 1234"
   }

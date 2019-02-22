@@ -2,8 +2,7 @@
 
 ```bash
 $ npm install
-$ npm run server
-$ npm run client
+$ npm run dev
 ```
 
 然后打开 <http://localhost:1234>，控制台查看。直接打开 <http://localhost:8888> 会被重定向，可以通过 `curl http://localhost:8888` 查看后台数据返回的形式
