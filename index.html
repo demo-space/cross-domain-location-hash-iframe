@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>location.hash+iframe 跨域 demo</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function getData(url, fn) {
+      var iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.src = url;
+
+      iframe.onload = function() {
+        fn(iframe.contentWindow.location.hash.substring(1));
+        document.body.removeChild(iframe);
+      };
+
+      document.body.appendChild(iframe);
+    }
+
+    // get data from server
+    var url = 'http://localhost:8888';
+    getData(url, function(data) {
+      var jsondata = JSON.parse(decodeURIComponent(data));
+      console.log(jsondata)
+    });
+  </script>
+</body>
+</html>

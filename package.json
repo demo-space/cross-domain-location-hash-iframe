@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "nodemon": "^1.18.10"
+  },
+  "scripts": {
+    "server": "nodemon app",
+    "client": "http-server -p 1234"
+  }
+}
